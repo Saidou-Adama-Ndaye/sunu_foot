@@ -14,7 +14,7 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              //##########################################################################################################################################
+              //##########################################################
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
               // LE ROW QUI CONTIENT L'ENTETE, LE LOGO ETC...
               child: Row(
@@ -68,7 +68,7 @@ class Home extends StatelessWidget {
               height: 15.h,
             ),
             Padding(
-              //##########################################################################################################################################
+              //#################################################
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               //LE WIDGET QUI CONTIENT LE TITRE TERRAIN DISPONIBLE
               child: Text(
@@ -83,7 +83,7 @@ class Home extends StatelessWidget {
               height: 10.h,
             ),
             Padding(
-              //##########################################################################################################################################
+              //###################################################
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               //LE CONTAINER QUI CONTIENT LE FORMULAIRE DE RECHERCHE
               child: Container(
@@ -170,7 +170,7 @@ class Home extends StatelessWidget {
               height: 20.h,
             ),
             Expanded(
-              //############################################################################################################################################
+              //#############################################################
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
                 height: 45.h,

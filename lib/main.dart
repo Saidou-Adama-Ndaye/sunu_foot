@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sunu_foot/pages/recherche_filtres/recherche_filtres.dart';
-// import 'package:sunu_foot/pages/home_page/home_page.dart';
+import 'package:sunu_foot/pages/terrain/terrain_page.dart';
+// import 'package:sunu_foot/pages/home/home_page.dart';
+// import 'package:sunu_foot/pages/terrain/terrain_page.dart';
+// import 'package:sunu_foot/pages/recherche_filtres/recherche_filtres.dart';
 // import 'package:sunu_foot/pages/home_recherche/home_recherche.dart';
 
 void main() => runApp(MyApp());
@@ -21,10 +23,10 @@ class MyApp extends StatelessWidget {
         return const MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'First Method',
-          home: RechercheFiltres(),
+          home: TerrainPage(),
         );
       },
-      child: const RechercheFiltres(),
+      child: const TerrainPage(),
     );
   }
 }
