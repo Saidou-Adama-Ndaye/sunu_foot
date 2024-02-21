@@ -19,66 +19,63 @@ class TerrainPage extends StatelessWidget {
             // LE HEADER
             const HeaderContainer(),
             Expanded(
+              // LE GRAND CONTAINER GRIS
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 10.h),
                 height: 45.h,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 241, 240, 240),
                 ),
-                // LE CONTAINER
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
+                  // LE COLUMN QUI CONTIENT TOUS LES ELEMENTS DU CONTAINER GRIS
                   child: Column(
                     children: [
-                      // LE COLUMN QUI CONTIENT LES JOURS DE LA SEMAINE
-                      Column(
-                        children: [
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 20.w),
-                              child: Row(
-                                children: [
-                                  const CustomDateContainer(
-                                    text: 'Jeu\n09\nMars',
-                                    backgroundColor: Color(0xff1f243b),
-                                    textColor: Colors.white,
-                                  ),
-                                  SizedBox(width: 10.w),
-                                  const CustomDateContainer(
-                                    text: 'Ven\n10\nMars',
-                                    backgroundColor: Color(0xffffffff),
-                                    textColor: Colors.black,
-                                  ),
-                                  SizedBox(width: 10.w),
-                                  const CustomDateContainer(
-                                    text: 'Sam\n11\nMars',
-                                    backgroundColor: Color(0xffffffff),
-                                    textColor: Colors.black,
-                                  ),
-                                  SizedBox(width: 10.w),
-                                  const CustomDateContainer(
-                                    text: 'Dim\n012\nMars',
-                                    backgroundColor: Color(0xffffffff),
-                                    textColor: Colors.black,
-                                  ),
-                                  SizedBox(width: 10.w),
-                                  const CustomDateContainer(
-                                    text: 'Lun\n13\nMars',
-                                    backgroundColor: Color(0xffffffff),
-                                    textColor: Colors.black,
-                                  ),
-                                  SizedBox(width: 10.w),
-                                  const CustomDateContainer(
-                                    text: 'Mar\n14\nMars',
-                                    backgroundColor: Color(0xffffffff),
-                                    textColor: Colors.black,
-                                  ),
-                                ],
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
+                          // LE ROW QUI CONTIENT LES DATES
+                          child: Row(
+                            children: [
+                              const CustomDateContainer(
+                                text: 'Jeu\n09\nMars',
+                                backgroundColor: Color(0xff1f243b),
+                                textColor: Colors.white,
                               ),
-                            ),
+                              SizedBox(width: 10.w),
+                              const CustomDateContainer(
+                                text: 'Ven\n10\nMars',
+                                backgroundColor: Color(0xffffffff),
+                                textColor: Colors.black,
+                              ),
+                              SizedBox(width: 10.w),
+                              const CustomDateContainer(
+                                text: 'Sam\n11\nMars',
+                                backgroundColor: Color(0xffffffff),
+                                textColor: Colors.black,
+                              ),
+                              SizedBox(width: 10.w),
+                              const CustomDateContainer(
+                                text: 'Dim\n012\nMars',
+                                backgroundColor: Color(0xffffffff),
+                                textColor: Colors.black,
+                              ),
+                              SizedBox(width: 10.w),
+                              const CustomDateContainer(
+                                text: 'Lun\n13\nMars',
+                                backgroundColor: Color(0xffffffff),
+                                textColor: Colors.black,
+                              ),
+                              SizedBox(width: 10.w),
+                              const CustomDateContainer(
+                                text: 'Mar\n14\nMars',
+                                backgroundColor: Color(0xffffffff),
+                                textColor: Colors.black,
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                       SizedBox(
                         height: 10.h,
@@ -173,16 +170,16 @@ class TerrainPage extends StatelessWidget {
                             SizedBox(
                               height: 10.h,
                             ),
-                            // PREMIERE SECTION H
+                            // PREMIERE SECTION H-1
                             const SectionContainer(
                               height: 159,
                               title: 'Section H-1',
                               picture: 'assets/images/auto-group-y1o9.png',
-                              // PREMIERE LIGNE DE LA SECTION
                             ),
                             SizedBox(
                               height: 10.h,
                             ),
+                            // DEUXIEME SECTION H-2
                             const SectionContainer(
                               height: 159,
                               title: 'Section H-2',
@@ -191,6 +188,7 @@ class TerrainPage extends StatelessWidget {
                             SizedBox(
                               height: 10.h,
                             ),
+                            // TROISIEME SECTION H-3
                             const SectionContainer(
                               height: 159,
                               title: 'Section H-3',

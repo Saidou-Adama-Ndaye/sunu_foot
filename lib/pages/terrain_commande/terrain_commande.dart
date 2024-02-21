@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sunu_foot/pages/home_recherche/home_recherche_widgets/terrain_container.dart';
 import 'package:sunu_foot/pages/recherche_filtres/recherche_filtres_widgets/small_container_widget.dart';
-import 'package:sunu_foot/pages/utils_widgets/date_container.dart';
-import 'package:sunu_foot/pages/utils_widgets/time_slot_container.dart';
+import 'package:sunu_foot/pages/terrain_commande/terrain_commande_widgets/bottom_container.dart';
 
 class TerrainCommande extends StatelessWidget {
   const TerrainCommande({super.key});
@@ -16,7 +14,6 @@ class TerrainCommande extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              //############################################################
               padding: EdgeInsets.only(
                   left: 10.w, right: 150.w, top: 30.h, bottom: 10.h),
               // LE ROW QUI CONTIENT L'ENTETE, LE LOGO ETC...
@@ -40,18 +37,20 @@ class TerrainCommande extends StatelessWidget {
                 ],
               ),
             ),
+            // LE GRAND CONTAINER GRIS
             Expanded(
-              //##########################################################
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 10.h),
+                padding: EdgeInsets.only(top: 10.h),
                 height: 45.h,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 241, 240, 240),
                 ),
+                // LE COLUMN QUI CONTIENT TOUS LES ELEMENTS
                 child: Column(
                   children: [
                     Padding(
                       padding: EdgeInsets.only(top: 25.h, bottom: 20.h),
+                      // LE ROW QUI CONTIENT LE TITRE "RESERVER LE TERRAIN"
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -65,6 +64,7 @@ class TerrainCommande extends StatelessWidget {
                         ],
                       ),
                     ),
+                    // LE CONTAINER EN VERT QUI SE TROUVE AU MILIEU
                     Container(
                       width: 330.w,
                       height: 345.h,
@@ -72,8 +72,10 @@ class TerrainCommande extends StatelessWidget {
                         color: Colors.green,
                         borderRadius: BorderRadius.circular(20.r),
                       ),
+                      // LE COLUMN QUI CONTIENT TOUS LES ELEMENTS DU CONTAINER VERT
                       child: Column(
                         children: [
+                          // LE ROW QUI CONTIENT LE LE LOGO ET LE NOM DU TERRAIN
                           Padding(
                             padding: EdgeInsets.only(
                                 left: 10.w, top: 20.h, right: 90.w),
@@ -122,6 +124,7 @@ class TerrainCommande extends StatelessWidget {
                           SizedBox(
                             height: 20.h,
                           ),
+                          // LE CONTAINER EN BLANC QUI SE TROUVE DANS LE CONTAINER VERT
                           Expanded(
                             child: Container(
                               padding: EdgeInsets.symmetric(
@@ -134,6 +137,7 @@ class TerrainCommande extends StatelessWidget {
                               ),
                               child: Column(
                                 children: [
+                                  // LE PREMIER ROW DU CONTAINER BLANC
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -188,6 +192,7 @@ class TerrainCommande extends StatelessWidget {
                                   SizedBox(
                                     height: 10.h,
                                   ),
+                                  // LE DEUXIEME ROW DU CONTAINER BLANC
                                   Row(
                                     children: [
                                       Container(
@@ -263,6 +268,7 @@ class TerrainCommande extends StatelessWidget {
                                   SizedBox(
                                     height: 10.h,
                                   ),
+                                  // LE TROISIEME ROW DU CONTAINER BLANC
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -306,6 +312,7 @@ class TerrainCommande extends StatelessWidget {
                                   SizedBox(
                                     height: 10.h,
                                   ),
+                                  // LE QUATRIEME ROW DU CONTAINER BLANC
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -445,6 +452,7 @@ class TerrainCommande extends StatelessWidget {
                     SizedBox(
                       height: 30.h,
                     ),
+                    // LE ROW QUI CONTIENT LE PARAGRAPHE
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -487,7 +495,14 @@ class TerrainCommande extends StatelessWidget {
                           ),
                         )
                       ],
-                    )
+                    ),
+                    SizedBox(
+                      height: 30.h,
+                    ),
+                    // LE BOTTOM
+                    Expanded(
+                      child: BottomContainer(),
+                    ),
                   ],
                 ),
               ),

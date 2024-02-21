@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sunu_foot/pages/terrain_commande/terrain_commande.dart';
+import 'package:sunu_foot/pages/terrain_commande_succes/terrain_commande_succes.dart';
+// import 'package:sunu_foot/pages/terrain_commande/terrain_commande.dart';
 // import 'package:sunu_foot/pages/terrain/terrain_page.dart';
 // import 'package:sunu_foot/pages/home/home_page.dart';
 // import 'package:sunu_foot/pages/terrain/terrain_page.dart';
@@ -24,10 +25,10 @@ class MyApp extends StatelessWidget {
         return const MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'First Method',
-          home: TerrainCommande(),
+          home: TerrainCommandeSuccess(),
         );
       },
-      child: const TerrainCommande(),
+      child: const TerrainCommandeSuccess(),
     );
   }
 }

@@ -27,9 +27,11 @@ class SectionContainer extends StatelessWidget {
       child: Expanded(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+          // LE COLUMN QUI CONTIENT TOUS LES ELEMENTS D'UNE SECTION
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // LE PREMIER ROW DE LA SECTION
               Row(
                 children: [
                   Expanded(
@@ -39,12 +41,14 @@ class SectionContainer extends StatelessWidget {
                   )),
                 ],
               ),
+              // LE DEUXIEME ROW DE LA SECTION
               Row(
                 children: [
                   Expanded(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        // LE PREMIER SOUS CONTAINER DE LA SECTION
                         SmallContainer(
                           pading: EdgeInsets.only(
                               left: 10.w, top: 4.h, right: 4.w, bottom: 4.h),
@@ -90,6 +94,7 @@ class SectionContainer extends StatelessWidget {
                             ),
                           ],
                         ),
+                        // LE DEUXIEME SOUS CONTAINER DE LA SECTION
                         SmallContainer(
                           pading:
                               EdgeInsets.only(left: 10.w, top: 4.h, right: 4.w),
@@ -140,12 +145,14 @@ class SectionContainer extends StatelessWidget {
                   ),
                 ],
               ),
+              // LE TROISIEME ROW DE LA SECTION
               Row(
                 children: [
                   Expanded(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        // PREMIER ELEMENT DE LA TROISIEME ROW
                         SmallContainer(
                           pading: EdgeInsets.symmetric(horizontal: 10.w),
                           width: 46,
@@ -172,6 +179,7 @@ class SectionContainer extends StatelessWidget {
                         SizedBox(
                           width: 10.w,
                         ),
+                        // DEUXIEME ELEMENT DE LA TROISIEME ROW
                         SmallContainer(
                           pading: EdgeInsets.symmetric(horizontal: 10.w),
                           width: 46,
@@ -198,6 +206,7 @@ class SectionContainer extends StatelessWidget {
                         SizedBox(
                           width: 10.w,
                         ),
+                        // TROISIEME ELEMENT DE LA TROISIEME ROW
                         SmallContainer(
                           pading: EdgeInsets.symmetric(horizontal: 10.w),
                           width: 46,
@@ -224,6 +233,7 @@ class SectionContainer extends StatelessWidget {
                         SizedBox(
                           width: 10.w,
                         ),
+                        // QUATRIEME ELEMENT DE LA TROISIEME ROW
                         SmallContainer(
                           pading: EdgeInsets.symmetric(horizontal: 10.w),
                           width: 46,
