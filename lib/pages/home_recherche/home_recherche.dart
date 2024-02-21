@@ -113,7 +113,7 @@ class HomeRecherche extends StatelessWidget {
                       Icons.settings, // Icôre de filtre
                       color: Colors.white, // Couleur blanche de l'icône
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

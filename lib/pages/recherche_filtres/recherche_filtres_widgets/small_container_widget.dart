@@ -31,7 +31,7 @@ class SmallContainer extends StatelessWidget {
       ),
       child: Row(
         mainAxisAlignment:
-            MainAxisAlignment.spaceEvenly, // Alignement des éléments de la Row
+            MainAxisAlignment.spaceBetween, // Alignement des éléments de la Row
         children: children, // Utilisation des widgets enfants fournis
       ),
     );
