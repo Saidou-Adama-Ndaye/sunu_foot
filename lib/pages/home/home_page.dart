@@ -14,7 +14,6 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              //##########################################################
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
               // LE ROW QUI CONTIENT L'ENTETE, LE LOGO ETC...
               child: Row(
@@ -68,7 +67,6 @@ class Home extends StatelessWidget {
               height: 15.h,
             ),
             Padding(
-              //#################################################
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               //LE WIDGET QUI CONTIENT LE TITRE TERRAIN DISPONIBLE
               child: Text(
@@ -83,14 +81,13 @@ class Home extends StatelessWidget {
               height: 10.h,
             ),
             Padding(
-              //###################################################
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               //LE CONTAINER QUI CONTIENT LE FORMULAIRE DE RECHERCHE
               child: Container(
                 width: 335.w,
                 height: 167.h,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 241, 240, 240),
+                  color: Color.fromARGB(255, 223, 222, 222),
                   border: Border.all(
                     color: Colors.green,
                     width: 3.w,
@@ -175,7 +172,7 @@ class Home extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
                 height: 45.h,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 241, 240, 240),
+                  color: Color.fromARGB(255, 223, 221, 221),
                   border: Border.all(
                     color: Colors.green,
                   ),

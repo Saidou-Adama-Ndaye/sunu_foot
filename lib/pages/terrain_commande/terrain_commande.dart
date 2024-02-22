@@ -43,7 +43,7 @@ class TerrainCommande extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.h),
                 height: 45.h,
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 241, 240, 240),
+                  color: Color.fromARGB(255, 216, 214, 214),
                 ),
                 // LE COLUMN QUI CONTIENT TOUS LES ELEMENTS
                 child: Column(

@@ -24,7 +24,7 @@ class TerrainPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 10.h),
                 height: 45.h,
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 241, 240, 240),
+                  color: Color.fromARGB(255, 219, 216, 216),
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,

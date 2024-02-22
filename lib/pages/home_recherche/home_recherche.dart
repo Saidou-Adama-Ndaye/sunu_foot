@@ -123,7 +123,7 @@ class HomeRecherche extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 10.h),
                 height: 45.h,
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 241, 240, 240),
+                  color: Color.fromARGB(255, 223, 220, 220),
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,

@@ -51,7 +51,7 @@ class RechercheFiltres extends StatelessWidget {
           ),
           margin: EdgeInsets.only(top: 20.sp),
           decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 231, 230, 230),
+              color: Color.fromARGB(255, 218, 215, 215),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20.r),
                   topRight: Radius.circular(20.r))),

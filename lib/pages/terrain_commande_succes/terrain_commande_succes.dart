@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sunu_foot/pages/recherche_filtres/recherche_filtres_widgets/small_container_widget.dart';
-import 'package:sunu_foot/pages/terrain_commande/terrain_commande_widgets/bottom_container.dart';
 
 class TerrainCommandeSuccess extends StatelessWidget {
   const TerrainCommandeSuccess({super.key});
@@ -43,7 +42,7 @@ class TerrainCommandeSuccess extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.h),
                 height: 45.h,
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 241, 240, 240),
+                  color: Color.fromARGB(255, 224, 221, 221),
                 ),
                 // LE COLUMN QUI CONTIENT TOUS LES ELEMENTS
                 child: Column(
