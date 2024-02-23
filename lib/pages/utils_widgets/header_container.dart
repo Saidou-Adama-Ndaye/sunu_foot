@@ -104,7 +104,7 @@ class HeaderContainer extends StatelessWidget {
                   Icon(
                     size: 17.sp,
                     Icons.star,
-                    color: Color.fromARGB(255, 236, 236, 235),
+                    color: const Color.fromARGB(255, 236, 236, 235),
                   ),
                 ],
               )
@@ -114,107 +114,31 @@ class HeaderContainer extends StatelessWidget {
         SizedBox(height: 10.h),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               MenuItemContainer(
                 text: 'Réservation',
-                color: Color(0xff1f243b),
+                color: const Color(0xff1f243b),
                 border: Border(
                   bottom: BorderSide(
-                    width: 2,
-                    color: Color(0xff1f243b),
+                    width: 2.w,
+                    color: const Color(0xff1f243b),
                   ),
                 ),
               ),
-              MenuItemContainer(
+              const MenuItemContainer(
                 text: 'Gallerie',
                 color: Color.fromARGB(255, 121, 121, 122),
               ),
-              MenuItemContainer(
+              const MenuItemContainer(
                 text: 'Infos',
                 color: Color.fromARGB(255, 121, 121, 122),
               ),
-              MenuItemContainer(
+              const MenuItemContainer(
                 text: 'Avis',
                 color: Color.fromARGB(255, 121, 121, 122),
               ),
-              // Container(
-              //   padding: EdgeInsets.symmetric(vertical: 10.h),
-              //   decoration: BoxDecoration(
-              //     border: Border(
-              //       bottom: BorderSide(
-              //         width: 2,
-              //         color: Color(0xff1f243b),
-              //       ),
-              //     ),
-              //   ),
-              //   child: Text(
-              //     'Réservation',
-              //     style: TextStyle(
-              //       fontSize: 12.sp,
-              //       fontWeight: FontWeight.bold,
-              //       color: color,
-              //     ),
-              //   ),
-              // ),
-              // Container(
-              //   padding: EdgeInsets.symmetric(vertical: 10.h),
-              //   decoration: BoxDecoration(
-              //     border: Border(
-              //       bottom: BorderSide(
-              //         width: 2,
-              //         color: Color(0xff1f243b),
-              //       ),
-              //     ),
-              //   ),
-              //   child: Text(
-              //     'Réservation',
-              //     style: TextStyle(
-              //       fontSize: 12.sp,
-              //       fontWeight: FontWeight.bold,
-              //       color: color,
-              //     ),
-              //   ),
-              // ),
-              // Container(
-              //   padding: EdgeInsets.symmetric(vertical: 10.h),
-              //   decoration: BoxDecoration(
-              //     border: Border(
-              //       bottom: BorderSide(
-              //         width: 2,
-              //         color: Color(0xff1f243b),
-              //       ),
-              //     ),
-              //   ),
-              //   child: Text(
-              //     'Réservation',
-              //     style: TextStyle(
-              //       fontSize: 12.sp,
-              //       fontWeight: FontWeight.bold,
-              //       color: color,
-              //     ),
-              //   ),
-              // ),
-              // Container(
-              //   padding: EdgeInsets.symmetric(vertical: 10.h),
-              //   decoration: BoxDecoration(
-              //     border: Border(
-              //       bottom: BorderSide(
-              //         width: 2,
-              //         color: Color(0xff1f243b),
-              //       ),
-              //     ),
-              //   ),
-              //   child: Text(
-              //     'Réservation',
-              //     style: TextStyle(
-              //       fontSize: 12.sp,
-              //       fontWeight: FontWeight.bold,
-              //       color: color,
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ),

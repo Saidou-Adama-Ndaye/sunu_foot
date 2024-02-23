@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sunu_foot/pages/terrain_gallerie/gallerie_picture.dart';
+import 'package:sunu_foot/pages/terrain_gallerie/terrain_gallerie_widgets/gallerie_picture.dart';
 import 'package:sunu_foot/pages/terrain_gallerie/terrain_gallerie_widgets/gallerie_container.dart';
 import 'package:sunu_foot/pages/utils_widgets/header_container.dart';
 
