@@ -38,10 +38,10 @@ class CustomerAvisContainer extends StatelessWidget {
                 width: 40.w,
                 decoration: BoxDecoration(
                   color: color, // Couleur de fond verte
-                  borderRadius: BorderRadius.circular(100.r),
+                  shape: BoxShape.circle,
                   image: DecorationImage(
                     image: AssetImage(imagePath),
-                  ), // Bordures arrondies
+                  ),
                 ),
               ),
               SizedBox(

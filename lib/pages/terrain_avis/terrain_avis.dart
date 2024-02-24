@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sunu_foot/pages/terrain_avis/terrain_avis_widgets/bottom_avis_container.dart';
 import 'package:sunu_foot/pages/terrain_avis/terrain_avis_widgets/customer_avis_container.dart';
 import 'package:sunu_foot/pages/utils_widgets/header_container.dart';
 
@@ -18,7 +19,11 @@ class TerrainAvis extends StatelessWidget {
             Expanded(
               // LE GRAND CONTAINER GRIS
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+                padding: EdgeInsets.only(
+                  left: 20.w,
+                  right: 20.w,
+                  top: 10.h,
+                ),
                 width: double.infinity,
                 height: double.infinity,
                 decoration: const BoxDecoration(
@@ -61,6 +66,7 @@ class TerrainAvis extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: BottomAvisContainer(),
     );
   }
 }
