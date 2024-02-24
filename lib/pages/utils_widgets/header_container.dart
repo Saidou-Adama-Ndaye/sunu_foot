@@ -3,8 +3,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sunu_foot/pages/utils_widgets/menu_item_container.dart';
 
 class HeaderContainer extends StatelessWidget {
+  final bool? reservation;
+  final bool? gallerie;
+  final bool? infos;
+  final bool? avis;
+
   const HeaderContainer({
     Key? key,
+    this.reservation = false,
+    this.gallerie = false,
+    this.infos = false,
+    this.avis = false,
   }) : super(key: key);
 
   @override
@@ -29,14 +38,16 @@ class HeaderContainer extends StatelessWidget {
                 margin: EdgeInsets.only(top: 30.h),
                 width: 60.w,
                 height: 60.h,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 240, 239, 237),
-                  borderRadius: BorderRadius.circular(100),
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 240, 239, 237),
+                  shape: BoxShape.circle,
                 ),
-                child: Image.asset(
-                  'assets/images/image-64.png',
-                  width: 50.w,
-                  height: 50.h,
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/image-64.png',
+                    width: 50.w,
+                    height: 50.h,
+                  ),
                 ),
               ),
               Row(
@@ -119,25 +130,59 @@ class HeaderContainer extends StatelessWidget {
             children: [
               MenuItemContainer(
                 text: 'Réservation',
-                color: const Color(0xff1f243b),
-                border: Border(
-                  bottom: BorderSide(
-                    width: 2.w,
-                    color: const Color(0xff1f243b),
-                  ),
-                ),
+                color: reservation == true
+                    ? const Color(0xff1f243b)
+                    : const Color.fromARGB(255, 121, 121, 122),
+                border: reservation == true
+                    ? Border(
+                        bottom: BorderSide(
+                          width: 2.w,
+                          color: const Color(0xff1f243b),
+                        ),
+                      )
+                    : null,
               ),
-              const MenuItemContainer(
+              MenuItemContainer(
                 text: 'Gallerie',
-                color: Color.fromARGB(255, 121, 121, 122),
+                color: gallerie == true
+                    ? const Color(0xff1f243b)
+                    : const Color.fromARGB(255, 121, 121, 122),
+                border: gallerie == true
+                    ? Border(
+                        bottom: BorderSide(
+                          width: 2.w,
+                          color: const Color(0xff1f243b),
+                        ),
+                      )
+                    : null,
               ),
-              const MenuItemContainer(
+              MenuItemContainer(
                 text: 'Infos',
-                color: Color.fromARGB(255, 121, 121, 122),
+                color: infos == true
+                    ? const Color(0xff1f243b)
+                    : const Color.fromARGB(255, 121, 121, 122),
+                border: infos == true
+                    ? Border(
+                        bottom: BorderSide(
+                          width: 2.w,
+                          color: const Color(0xff1f243b),
+                        ),
+                      )
+                    : null,
               ),
-              const MenuItemContainer(
+              MenuItemContainer(
                 text: 'Avis',
-                color: Color.fromARGB(255, 121, 121, 122),
+                color: avis == true
+                    ? const Color(0xff1f243b)
+                    : const Color.fromARGB(255, 121, 121, 122),
+                border: avis == true
+                    ? Border(
+                        bottom: BorderSide(
+                          width: 2.w,
+                          color: const Color(0xff1f243b),
+                        ),
+                      )
+                    : null,
               ),
             ],
           ),

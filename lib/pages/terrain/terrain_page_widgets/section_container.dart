@@ -81,15 +81,16 @@ class SectionContainer extends StatelessWidget {
                               height: 30.h,
                               width: 30.w,
                               padding: const EdgeInsets.all(5),
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Colors.green, // Couleur de fond verte
-                                borderRadius: BorderRadius.circular(
-                                    100.r), // Bordures arrondies
+                                shape: BoxShape.circle,
                               ),
-                              child: Icon(
-                                Icons.arrow_forward, // Icôre de filtre
-                                color: Colors.white,
-                                size: 12.sp, // Couleur blanche de l'icône
+                              child: Center(
+                                child: Icon(
+                                  Icons.arrow_forward, // Icôre de filtre
+                                  color: Colors.white,
+                                  size: 12.sp, // Couleur blanche de l'icône
+                                ),
                               ),
                             ),
                           ],
@@ -127,15 +128,16 @@ class SectionContainer extends StatelessWidget {
                               height: 30.h,
                               width: 30.w,
                               padding: const EdgeInsets.all(5),
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Colors.green, // Couleur de fond verte
-                                borderRadius: BorderRadius.circular(
-                                    100.r), // Bordures arrondies
+                                shape: BoxShape.circle,
                               ),
-                              child: Icon(
-                                Icons.arrow_forward, // Icôre de filtre
-                                color: Colors.white,
-                                size: 12.sp, // Couleur blanche de l'icône
+                              child: Center(
+                                child: Icon(
+                                  Icons.arrow_forward, // Icôre de filtre
+                                  color: Colors.white,
+                                  size: 12.sp, // Couleur blanche de l'icône
+                                ),
                               ),
                             ),
                           ],

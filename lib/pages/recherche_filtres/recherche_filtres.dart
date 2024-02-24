@@ -41,6 +41,7 @@ class RechercheFiltres extends StatelessWidget {
       ),
       backgroundColor: Colors.black,
       body: SafeArea(
+        // LE GRAND CONTAINER GRIS
         child: Container(
           width: double.infinity,
           height: double.infinity,
@@ -92,17 +93,18 @@ class RechercheFiltres extends StatelessWidget {
                             Container(
                               width: 20.w, // Largeur de l'icône
                               height: 20.h, // Hauteur de l'icône
-                              decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 255, 255,
+                              decoration: const BoxDecoration(
+                                color: Color.fromARGB(255, 255, 255,
                                     255), // Couleur de fond grise
-                                borderRadius: BorderRadius.circular(50
-                                    .r), // Bordure arrondie pour créer un cercle
+                                shape: BoxShape.circle,
                               ),
-                              child: Icon(
-                                Icons.check, // Icône
-                                color: const Color.fromARGB(
-                                    255, 44, 160, 48), // Couleur de l'icône
-                                size: 12.sp, // Taille de l'icône
+                              child: Center(
+                                child: Icon(
+                                  Icons.check, // Icône
+                                  color: const Color.fromARGB(
+                                      255, 44, 160, 48), // Couleur de l'icône
+                                  size: 12.sp, // Taille de l'icône
+                                ),
                               ),
                             ),
                             SizedBox(
@@ -128,18 +130,11 @@ class RechercheFiltres extends StatelessWidget {
                             Container(
                               width: 20.w, // Largeur de l'icône
                               height: 20.h, // Hauteur de l'icône
-                              decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 255, 255,
+                              decoration: const BoxDecoration(
+                                color: Color.fromARGB(255, 255, 255,
                                     255), // Couleur de fond grise
-                                borderRadius: BorderRadius.circular(50
-                                    .r), // Bordure arrondie pour créer un cercle
+                                shape: BoxShape.circle,
                               ),
-                              // child: Icon(
-                              //   Icons.check, // Icône
-                              //   color: const Color.fromARGB(
-                              //       255, 44, 160, 48), // Couleur de l'icône
-                              //   size: 12.sp, // Taille de l'icône
-                              // ),
                             ),
                             SizedBox(
                               width: 10.w,

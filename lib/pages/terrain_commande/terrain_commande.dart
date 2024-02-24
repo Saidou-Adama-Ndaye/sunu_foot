@@ -87,15 +87,16 @@ class TerrainCommande extends StatelessWidget {
                                   // margin: EdgeInsets.only(top: 30.h),
                                   width: 50.w,
                                   height: 50.h,
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(
-                                        255, 240, 239, 237),
-                                    borderRadius: BorderRadius.circular(100),
+                                  decoration: const BoxDecoration(
+                                    color: Color.fromARGB(255, 240, 239, 237),
+                                    shape: BoxShape.circle,
                                   ),
-                                  child: Image.asset(
-                                    'assets/images/image-64.png',
-                                    width: 40.w,
-                                    height: 40.h,
+                                  child: Center(
+                                    child: Image.asset(
+                                      'assets/images/image-64.png',
+                                      width: 40.w,
+                                      height: 40.h,
+                                    ),
                                   ),
                                 ),
                                 Column(

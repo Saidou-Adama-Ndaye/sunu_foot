@@ -66,9 +66,9 @@ class Home extends StatelessWidget {
             SizedBox(
               height: 15.h,
             ),
+            //LE WIDGET QUI CONTIENT LE TITRE TERRAIN DISPONIBLE
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
-              //LE WIDGET QUI CONTIENT LE TITRE TERRAIN DISPONIBLE
               child: Text(
                 'Terrains disponibles',
                 style: TextStyle(
@@ -80,9 +80,9 @@ class Home extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
+            //LE CONTAINER QUI CONTIENT LE FORMULAIRE DE RECHERCHE
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
-              //LE CONTAINER QUI CONTIENT LE FORMULAIRE DE RECHERCHE
               child: Container(
                 width: 335.w,
                 height: 167.h,
@@ -167,16 +167,14 @@ class Home extends StatelessWidget {
               height: 20.h,
             ),
             Expanded(
-              //#############################################################
+              // LE GRAND CONTAINER GRIS
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-                height: 45.h,
-                decoration: BoxDecoration(
+                padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+                height: double.infinity,
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 223, 221, 221),
-                  border: Border.all(
-                    color: Colors.green,
-                  ),
                 ),
+                // LE COLUMN QUI CONTIENT TOUS LES ELEMENTS DU CONTAINER GRIS
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Column(

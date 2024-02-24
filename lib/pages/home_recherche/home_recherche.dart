@@ -14,10 +14,9 @@ class HomeRecherche extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // LE ROW QUI CONTIENT L'ENTETE, LE LOGO ETC...
             Padding(
-              //############################################################
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-              // LE ROW QUI CONTIENT L'ENTETE, LE LOGO ETC...
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -109,24 +108,27 @@ class HomeRecherche extends StatelessWidget {
                       borderRadius:
                           BorderRadius.circular(10.0), // Bordures arrondies
                     ),
-                    child: const Icon(
-                      Icons.settings, // Icôre de filtre
-                      color: Colors.white, // Couleur blanche de l'icône
+                    child: const Center(
+                      child: Icon(
+                        Icons.settings, // Icôre de filtre
+                        color: Colors.white, // Couleur blanche de l'icône
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
+            // LE GRAND CONTAINER GRIS
             Expanded(
-              //##########################################################
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 10.h),
+                padding: EdgeInsets.only(top: 10.h),
                 height: 45.h,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 223, 220, 220),
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
+                  // LE COLUMN QUI CONTIENT TOUS LES ELEMENTS DU CONTAINER GRIS
                   child: Column(
                     children: [
                       // LE ROW QUI CONTIENT LE CALENDRIER

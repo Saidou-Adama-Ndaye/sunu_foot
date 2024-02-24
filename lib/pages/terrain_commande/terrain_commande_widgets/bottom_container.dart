@@ -43,6 +43,7 @@ class BottomContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment
                 .spaceEvenly, // Espacement égal entre les boutons
             children: [
+              // BOUTON RESERVER
               ElevatedButton(
                 onPressed: () {
                   // Action du premier bouton
@@ -57,13 +58,14 @@ class BottomContainer extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  'Réinitialiser',
+                  'Réserver',
                   style: TextStyle(
                     fontSize: 14.sp,
                     color: Colors.black,
                   ),
                 ),
               ),
+              // BOUTON TOUT PAYER
               ElevatedButton(
                 onPressed: () {
                   // Action du deuxième bouton
@@ -77,7 +79,7 @@ class BottomContainer extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  'Rechercher',
+                  'Tout payer',
                   style: TextStyle(
                     fontSize: 14.sp,
                     color: Colors.white,

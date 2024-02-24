@@ -1,20 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sunu_foot/pages/home/home_page.dart';
+import 'package:sunu_foot/pages/home_recherche/home_recherche.dart';
+import 'package:sunu_foot/pages/recherche_filtres/recherche_filtres.dart';
+import 'package:sunu_foot/pages/terrain/terrain_page.dart';
 import 'package:sunu_foot/pages/terrain_avis/terrain_avis.dart';
-// import 'package:sunu_foot/pages/terrain_infos/terrain_infos.dart';
-// import 'package:sunu_foot/pages/terrain_gallerie/terrain_gallerie.dart';
-// import 'package:sunu_foot/pages/terrain_commande_succes/terrain_commande_succes.dart';
-// import 'package:sunu_foot/pages/terrain_commande/terrain_commande.dart';
-// import 'package:sunu_foot/pages/terrain/terrain_page.dart';
-// import 'package:sunu_foot/pages/home/home_page.dart';
-// import 'package:sunu_foot/pages/terrain/terrain_page.dart';
-// import 'package:sunu_foot/pages/recherche_filtres/recherche_filtres.dart';
-// import 'package:sunu_foot/pages/home_recherche/home_recherche.dart';
+import 'package:sunu_foot/pages/terrain_commande/terrain_commande.dart';
+import 'package:sunu_foot/pages/terrain_commande_succes/terrain_commande_succes.dart';
+import 'package:sunu_foot/pages/terrain_gallerie/terrain_gallerie.dart';
+import 'package:sunu_foot/pages/terrain_infos/terrain_infos.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  // Liste des pages à afficher
+  final List<Widget> pages = [
+    TerrainAvis(),
+    TerrainInfos(),
+    TerrainGallerie(),
+    TerrainCommandeSuccess(),
+    TerrainCommande(),
+    TerrainPage(),
+    Home(),
+    RechercheFiltres(),
+    HomeRecherche(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +36,32 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       // Use builder only if you need to use library outside ScreenUtilInit context
-      builder: (_, child) {
-        return const MaterialApp(
+      builder: (_, __) {
+        return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'First Method',
-          home: TerrainAvis(),
+          title: 'All Pages Demo',
+          // Utiliser ListView.builder pour afficher toutes les pages
+          home: Scaffold(
+            appBar: AppBar(
+              title: Text('La démo de la maquette'),
+            ),
+            body: ListView.builder(
+              itemCount: pages.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(pages[index].toString()),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => pages[index]),
+                    );
+                  },
+                );
+              },
+            ),
+          ),
         );
       },
-      child: const TerrainAvis(),
     );
   }
 }

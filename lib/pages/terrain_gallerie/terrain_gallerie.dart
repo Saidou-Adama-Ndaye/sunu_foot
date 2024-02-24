@@ -15,11 +15,13 @@ class TerrainGallerie extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // LE HEADER
-            const HeaderContainer(),
+            const HeaderContainer(
+              gallerie: true,
+            ),
             Expanded(
               // LE GRAND CONTAINER GRIS
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+                padding: EdgeInsets.only(left: 20.w, right: 20.h, top: 10.h),
                 width: double.infinity,
                 height: double.infinity,
                 decoration: const BoxDecoration(

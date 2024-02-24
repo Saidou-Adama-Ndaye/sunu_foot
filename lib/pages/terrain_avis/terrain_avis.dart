@@ -15,7 +15,9 @@ class TerrainAvis extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // LE HEADER
-            const HeaderContainer(),
+            const HeaderContainer(
+              avis: true,
+            ),
             Expanded(
               // LE GRAND CONTAINER GRIS
               child: Container(

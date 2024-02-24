@@ -46,16 +46,17 @@ class BigContainer extends StatelessWidget {
                         Container(
                           width: 22.w, // Largeur de l'icône
                           height: 22.h, // Hauteur de l'icône
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(
+                          decoration: const BoxDecoration(
+                            color: Color.fromARGB(
                                 255, 231, 230, 230), // Couleur de fond grise
-                            borderRadius: BorderRadius.circular(
-                                50.r), // Bordure arrondie pour créer un cercle
+                            shape: BoxShape.circle,
                           ),
-                          child: Icon(
-                            Icons.circle_notifications, // Icône
-                            color: Colors.black, // Couleur de l'icône
-                            size: 15.sp, // Taille de l'icône
+                          child: Center(
+                            child: Icon(
+                              Icons.circle_notifications, // Icône
+                              color: Colors.black, // Couleur de l'icône
+                              size: 15.sp, // Taille de l'icône
+                            ),
                           ),
                         ),
                       ],

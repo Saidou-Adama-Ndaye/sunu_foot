@@ -17,11 +17,13 @@ class TerrainPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // LE HEADER
-            const HeaderContainer(),
+            const HeaderContainer(
+              reservation: true,
+            ),
             Expanded(
               // LE GRAND CONTAINER GRIS
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 10.h),
+                padding: EdgeInsets.only(top: 10.h),
                 height: 45.h,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 219, 216, 216),

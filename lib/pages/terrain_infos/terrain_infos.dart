@@ -14,11 +14,13 @@ class TerrainInfos extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // LE HEADER
-            const HeaderContainer(),
+            const HeaderContainer(
+              infos: true,
+            ),
             Expanded(
               // LE GRAND CONTAINER GRIS
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+                padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
                 width: double.infinity,
                 height: double.infinity,
                 decoration: const BoxDecoration(
@@ -242,7 +244,7 @@ class TerrainInfos extends StatelessWidget {
                       SizedBox(
                         height: 10.h,
                       ),
-                      // LE CONTAINER INTERDITS
+                      // LE CONTAINER PERMIS
                       CustomContainer(
                         width: 335,
                         height: 205,
@@ -265,15 +267,16 @@ class TerrainInfos extends StatelessWidget {
                                 height: 20.h,
                                 width: 20.w,
                                 padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  color: Colors.green, // Couleur de fond verte
-                                  borderRadius: BorderRadius.circular(
-                                      100.r), // Bordures arrondies
+                                decoration: const BoxDecoration(
+                                  color: Colors.green,
+                                  shape: BoxShape.circle,
                                 ),
-                                child: Icon(
-                                  Icons.check, // Icôre de filtre
-                                  color: Colors.white,
-                                  size: 10.sp, // Couleur blanche de l'icône
+                                child: Center(
+                                  child: Icon(
+                                    Icons.check, // Icôre de filtre
+                                    color: Colors.white,
+                                    size: 10.sp, // Couleur blanche de l'icône
+                                  ),
                                 ),
                               ),
                               SizedBox(
@@ -299,15 +302,16 @@ class TerrainInfos extends StatelessWidget {
                                 height: 20.h,
                                 width: 20.w,
                                 padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  color: Colors.green, // Couleur de fond verte
-                                  borderRadius: BorderRadius.circular(
-                                      100.r), // Bordures arrondies
+                                decoration: const BoxDecoration(
+                                  color: Colors.green,
+                                  shape: BoxShape.circle,
                                 ),
-                                child: Icon(
-                                  Icons.check, // Icôre de filtre
-                                  color: Colors.white,
-                                  size: 10.sp, // Couleur blanche de l'icône
+                                child: Center(
+                                  child: Icon(
+                                    Icons.check, // Icôre de filtre
+                                    color: Colors.white,
+                                    size: 10.sp, // Couleur blanche de l'icône
+                                  ),
                                 ),
                               ),
                               SizedBox(
@@ -333,15 +337,16 @@ class TerrainInfos extends StatelessWidget {
                                 height: 20.h,
                                 width: 20.w,
                                 padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  color: Colors.green, // Couleur de fond verte
-                                  borderRadius: BorderRadius.circular(
-                                      100.r), // Bordures arrondies
+                                decoration: const BoxDecoration(
+                                  color: Colors.green,
+                                  shape: BoxShape.circle,
                                 ),
-                                child: Icon(
-                                  Icons.check, // Icôre de filtre
-                                  color: Colors.white,
-                                  size: 10.sp, // Couleur blanche de l'icône
+                                child: Center(
+                                  child: Icon(
+                                    Icons.check, // Icôre de filtre
+                                    color: Colors.white,
+                                    size: 10.sp, // Couleur blanche de l'icône
+                                  ),
                                 ),
                               ),
                               SizedBox(
@@ -367,15 +372,16 @@ class TerrainInfos extends StatelessWidget {
                                 height: 20.h,
                                 width: 20.w,
                                 padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  color: Colors.green, // Couleur de fond verte
-                                  borderRadius: BorderRadius.circular(
-                                      100.r), // Bordures arrondies
+                                decoration: const BoxDecoration(
+                                  color: Colors.green,
+                                  shape: BoxShape.circle,
                                 ),
-                                child: Icon(
-                                  Icons.check, // Icôre de filtre
-                                  color: Colors.white,
-                                  size: 10.sp, // Couleur blanche de l'icône
+                                child: Center(
+                                  child: Icon(
+                                    Icons.check, // Icôre de filtre
+                                    color: Colors.white,
+                                    size: 10.sp, // Couleur blanche de l'icône
+                                  ),
                                 ),
                               ),
                               SizedBox(
@@ -395,7 +401,7 @@ class TerrainInfos extends StatelessWidget {
                       SizedBox(
                         height: 10.h,
                       ),
-                      // LE CONTAINER PERMIS
+                      // LE CONTAINER INTERDITS
                       CustomContainer(
                         width: 335,
                         height: 205,
@@ -418,10 +424,9 @@ class TerrainInfos extends StatelessWidget {
                                 height: 20.h,
                                 width: 20.w,
                                 padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Colors.red, // Couleur de fond verte
-                                  borderRadius: BorderRadius.circular(
-                                      100.r), // Bordures arrondies
+                                  shape: BoxShape.circle,
                                 ),
                                 child: Icon(
                                   Icons.clear, // Icôre de filtre
@@ -452,10 +457,9 @@ class TerrainInfos extends StatelessWidget {
                                 height: 20.h,
                                 width: 20.w,
                                 padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Colors.red, // Couleur de fond verte
-                                  borderRadius: BorderRadius.circular(
-                                      100.r), // Bordures arrondies
+                                  shape: BoxShape.circle,
                                 ),
                                 child: Icon(
                                   Icons.clear, // Icôre de filtre
@@ -486,10 +490,9 @@ class TerrainInfos extends StatelessWidget {
                                 height: 20.h,
                                 width: 20.w,
                                 padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Colors.red, // Couleur de fond verte
-                                  borderRadius: BorderRadius.circular(
-                                      100.r), // Bordures arrondies
+                                  shape: BoxShape.circle,
                                 ),
                                 child: Icon(
                                   Icons.clear, // Icôre de filtre
@@ -520,10 +523,9 @@ class TerrainInfos extends StatelessWidget {
                                 height: 20.h,
                                 width: 20.w,
                                 padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Colors.red, // Couleur de fond verte
-                                  borderRadius: BorderRadius.circular(
-                                      100.r), // Bordures arrondies
+                                  shape: BoxShape.circle,
                                 ),
                                 child: Icon(
                                   Icons.clear, // Icôre de filtre
