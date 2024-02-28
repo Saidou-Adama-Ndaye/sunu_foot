@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sunu_foot/pages/utils_widgets/rating_bar.dart';
 
 class BottomAvisContainer extends StatelessWidget {
   @override
@@ -20,30 +21,18 @@ class BottomAvisContainer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.star,
-                color: Color.fromARGB(255, 179, 178, 177),
-                size: 20.sp,
-              ),
-              Icon(
-                Icons.star,
-                color: Color.fromARGB(255, 179, 178, 177),
-                size: 20.sp,
-              ),
-              Icon(
-                Icons.star,
-                color: Color.fromARGB(255, 179, 178, 177),
-                size: 20.sp,
-              ),
-              Icon(
-                Icons.star,
-                color: Color.fromARGB(255, 179, 178, 177),
-                size: 20.sp,
-              ),
-              Icon(
-                Icons.star,
-                color: Color.fromARGB(255, 179, 178, 177),
-                size: 20.sp,
+              CustomRatingBar(
+                itemSize: 20,
+                initialRating: 0,
+                minRating: 0,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                size: 10,
+                onRatingUpdate: (rating) {
+                  print(rating);
+                },
               ),
             ],
           ),

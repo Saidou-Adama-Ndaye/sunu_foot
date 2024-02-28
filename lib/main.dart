@@ -1,3 +1,5 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sunu_foot/pages/home/home_page.dart';
@@ -10,7 +12,12 @@ import 'package:sunu_foot/pages/terrain_commande_succes/terrain_commande_succes.
 import 'package:sunu_foot/pages/terrain_gallerie/terrain_gallerie.dart';
 import 'package:sunu_foot/pages/terrain_infos/terrain_infos.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(
+      DevicePreview(
+        enabled: !kReleaseMode,
+        builder: (context) => MyApp(), // Wrap your app
+      ),
+    );
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
@@ -38,6 +45,9 @@ class MyApp extends StatelessWidget {
       // Use builder only if you need to use library outside ScreenUtilInit context
       builder: (_, __) {
         return MaterialApp(
+          useInheritedMediaQuery: true,
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           title: 'All Pages Demo',
           // Utiliser ListView.builder pour afficher toutes les pages

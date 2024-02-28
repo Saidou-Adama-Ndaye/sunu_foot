@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sunu_foot/pages/utils_widgets/like_button.dart';
+import 'package:sunu_foot/pages/utils_widgets/rating_bar.dart';
 
 class CustomTerrainContainer extends StatelessWidget {
   final String imageLocation;
@@ -63,25 +65,30 @@ class CustomTerrainContainer extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      (isFavorite)
-                          ? const Icon(
-                              Icons.favorite,
-                              color: Colors.red,
-                            )
-                          : const Icon(
-                              Icons.favorite,
-                              color: Colors.grey,
-                            )
+                      CustomLikeButton(
+                        size: 20.0,
+                        onTap: (bool isLiked) {
+                          // Mettez votre logique ici
+                        },
+                      ),
                     ],
                   ),
                   Row(
                     children: [
-                      for (int i = 0; i < 5; i++)
-                        Icon(
-                          Icons.star,
-                          color: i < 4 ? Colors.orange : Colors.grey,
-                          size: 15.sp,
-                        ),
+                      CustomRatingBar(
+                        itemSize: 13,
+                        initialRating: 4,
+                        minRating: 0,
+                        direction: Axis.horizontal,
+                        allowHalfRating: true,
+                        itemCount: 5,
+                        itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                        size: 10,
+                        color: Colors.amber,
+                        onRatingUpdate: (rating) {
+                          print(rating);
+                        },
+                      ),
                     ],
                   ),
                   SizedBox(height: 6.h),

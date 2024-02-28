@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:group_button/group_button.dart';
+import 'package:roundcheckbox/roundcheckbox.dart';
 import 'package:sunu_foot/pages/recherche_filtres/recherche_filtres_widgets/big_container_widget.dart';
 import 'package:sunu_foot/pages/recherche_filtres/recherche_filtres_widgets/bottom_navigator_container.dart';
 import 'package:sunu_foot/pages/recherche_filtres/recherche_filtres_widgets/small_container_widget.dart';
+import 'package:sunu_foot/pages/utils_widgets/rating_bar.dart';
 
 class RechercheFiltres extends StatelessWidget {
   const RechercheFiltres({super.key});
@@ -90,22 +93,12 @@ class RechercheFiltres extends StatelessWidget {
                           color: const Color.fromARGB(255, 44, 160, 48),
                           borderRadius: 10,
                           children: [
-                            Container(
-                              width: 20.w, // Largeur de l'icône
-                              height: 20.h, // Hauteur de l'icône
-                              decoration: const BoxDecoration(
-                                color: Color.fromARGB(255, 255, 255,
-                                    255), // Couleur de fond grise
-                                shape: BoxShape.circle,
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.check, // Icône
-                                  color: const Color.fromARGB(
-                                      255, 44, 160, 48), // Couleur de l'icône
-                                  size: 12.sp, // Taille de l'icône
-                                ),
-                              ),
+                            RoundCheckBox(
+                              size: 20.sp,
+                              uncheckedColor: Colors.white,
+                              onTap: (selected) {
+                                print(selected);
+                              },
                             ),
                             SizedBox(
                               width: 10.w,
@@ -127,14 +120,11 @@ class RechercheFiltres extends StatelessWidget {
                           color: const Color.fromARGB(255, 231, 230, 230),
                           borderRadius: 10,
                           children: [
-                            Container(
-                              width: 20.w, // Largeur de l'icône
-                              height: 20.h, // Hauteur de l'icône
-                              decoration: const BoxDecoration(
-                                color: Color.fromARGB(255, 255, 255,
-                                    255), // Couleur de fond grise
-                                shape: BoxShape.circle,
-                              ),
+                            RoundCheckBox(
+                              size: 20.sp,
+                              uncheckedColor: Colors.white,
+                              borderColor: Colors.green,
+                              onTap: (selected) {},
                             ),
                             SizedBox(
                               width: 10.w,
@@ -232,167 +222,44 @@ class RechercheFiltres extends StatelessWidget {
                       spacing: 10.w,
                       runSpacing: 10.h,
                       children: [
-                        SmallContainer(
-                          pading: const EdgeInsets.all(5),
-                          width: 65,
-                          height: 34,
-                          color: const Color.fromARGB(255, 231, 230, 230),
-                          borderRadius: 10,
-                          children: [
-                            Icon(
-                              Icons.person_2_outlined, // Icône
-                              color: const Color.fromARGB(
-                                  255, 0, 0, 0), // Couleur de l'icône
-                              size: 12.sp, // Taille de l'icône
+                        GroupButton(
+                          isRadio: false,
+                          // onSelected: (index, isSelected) =>
+                          //     print('$index button is selected'),
+                          buttons: const ["5", "6", "7", "8", "9", "10"],
+                          options: GroupButtonOptions(
+                            borderRadius: BorderRadius.circular(10.r),
+                            selectedShadow: const [],
+                            selectedTextStyle: const TextStyle(
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 255, 255, 255),
                             ),
-                            Text(
-                              '5',
-                              style: TextStyle(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
+                            selectedColor: Colors.green,
+                            unselectedShadow: const [],
+                            unselectedColor:
+                                const Color.fromARGB(255, 231, 230, 230),
+                            unselectedTextStyle: const TextStyle(
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 0, 0, 0),
                             ),
-                          ],
-                        ),
-                        SmallContainer(
-                          pading: const EdgeInsets.all(5),
-                          width: 65,
-                          height: 34,
-                          color: const Color.fromARGB(255, 44, 160, 48),
-                          borderRadius: 10,
-                          children: [
-                            Icon(
-                              Icons.person_2_outlined, // Icône
-                              color: const Color.fromARGB(
-                                  255, 255, 255, 255), // Couleur de l'icône
-                              size: 12.sp, // Taille de l'icône
-                            ),
-                            Text(
-                              '6',
-                              style: TextStyle(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SmallContainer(
-                          pading: const EdgeInsets.all(5),
-                          width: 65,
-                          height: 34,
-                          color: const Color.fromARGB(255, 44, 160, 48),
-                          borderRadius: 10,
-                          children: [
-                            Icon(
-                              Icons.person_2_outlined, // Icône
-                              color: const Color.fromARGB(
-                                  255, 255, 255, 255), // Couleur de l'icône
-                              size: 12.sp, // Taille de l'icône
-                            ),
-                            Text(
-                              '7',
-                              style: TextStyle(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SmallContainer(
-                          pading: const EdgeInsets.all(5),
-                          width: 65,
-                          height: 34,
-                          color: const Color.fromARGB(255, 44, 160, 48),
-                          borderRadius: 10,
-                          children: [
-                            Icon(
-                              Icons.person_2_outlined, // Icône
-                              color: const Color.fromARGB(
-                                  255, 255, 255, 255), // Couleur de l'icône
-                              size: 12.sp, // Taille de l'icône
-                            ),
-                            Text(
-                              '8',
-                              style: TextStyle(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SmallContainer(
-                          pading: const EdgeInsets.all(5),
-                          width: 65,
-                          height: 34,
-                          color: const Color.fromARGB(255, 231, 230, 230),
-                          borderRadius: 10,
-                          children: [
-                            Icon(
-                              Icons.person_2_outlined, // Icône
-                              color: const Color.fromARGB(
-                                  255, 0, 0, 0), // Couleur de l'icône
-                              size: 12.sp, // Taille de l'icône
-                            ),
-                            Text(
-                              '9',
-                              style: TextStyle(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SmallContainer(
-                          pading: const EdgeInsets.all(5),
-                          width: 65,
-                          height: 34,
-                          color: const Color.fromARGB(255, 231, 230, 230),
-                          borderRadius: 10,
-                          children: [
-                            Icon(
-                              Icons.person_2_outlined, // Icône
-                              color: const Color.fromARGB(
-                                  255, 0, 0, 0), // Couleur de l'icône
-                              size: 12.sp, // Taille de l'icône
-                            ),
-                            Text(
-                              '10',
-                              style: TextStyle(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SmallContainer(
-                          pading: const EdgeInsets.all(5),
-                          width: 65,
-                          height: 34,
-                          color: const Color.fromARGB(255, 231, 230, 230),
-                          borderRadius: 10,
-                          children: [
-                            Icon(
-                              Icons.person_2_outlined, // Icône
-                              color: const Color.fromARGB(
-                                  255, 0, 0, 0), // Couleur de l'icône
-                              size: 12.sp, // Taille de l'icône
-                            ),
-                            Text(
-                              '11',
-                              style: TextStyle(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
+                            selectedBorderColor:
+                                const Color.fromARGB(255, 197, 196, 197),
+                            unselectedBorderColor: Colors.green,
+                            spacing: 10,
+                            runSpacing: 10,
+                            groupingType: GroupingType.wrap,
+                            direction: Axis.horizontal,
+                            buttonHeight: 34.h,
+                            buttonWidth: 65.w,
+                            mainGroupAlignment: MainGroupAlignment.start,
+                            crossGroupAlignment: CrossGroupAlignment.start,
+                            groupRunAlignment: GroupRunAlignment.start,
+                            textAlign: TextAlign.center,
+                            textPadding: EdgeInsets.zero,
+                            alignment: Alignment.center,
+                            elevation: 0,
+                          ),
+                        )
                       ],
                     ),
                   ),
@@ -475,37 +342,19 @@ class RechercheFiltres extends StatelessWidget {
                     secondRow: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Icon(
-                          Icons.star,
+                        CustomRatingBar(
+                          itemSize: 20,
+                          initialRating: 5,
+                          minRating: 0,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                          size: 10,
                           color: Colors.green,
-                        ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        const Icon(
-                          Icons.star,
-                          color: Colors.green,
-                        ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        const Icon(
-                          Icons.star,
-                          color: Colors.green,
-                        ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        const Icon(
-                          Icons.star,
-                          color: Colors.green,
-                        ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        const Icon(
-                          Icons.star,
-                          color: Color.fromARGB(255, 231, 230, 230),
+                          onRatingUpdate: (rating) {
+                            print(rating);
+                          },
                         ),
                       ],
                     ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sunu_foot/pages/utils_widgets/menu_item_container.dart';
+import 'package:sunu_foot/pages/utils_widgets/rating_bar.dart';
 
 class HeaderContainer extends StatelessWidget {
   final bool? reservation;
@@ -92,30 +93,18 @@ class HeaderContainer extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
-                    size: 17.sp,
-                    Icons.star,
-                    color: Colors.orange,
-                  ),
-                  Icon(
-                    size: 17.sp,
-                    Icons.star,
-                    color: Colors.orange,
-                  ),
-                  Icon(
-                    size: 17.sp,
-                    Icons.star,
-                    color: Colors.orange,
-                  ),
-                  Icon(
-                    size: 17.sp,
-                    Icons.star,
-                    color: Colors.orange,
-                  ),
-                  Icon(
-                    size: 17.sp,
-                    Icons.star,
-                    color: const Color.fromARGB(255, 236, 236, 235),
+                  CustomRatingBar(
+                    itemSize: 20,
+                    initialRating: 4,
+                    minRating: 0,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    itemCount: 5,
+                    itemPadding: EdgeInsets.symmetric(horizontal: 3.0),
+                    size: 10,
+                    onRatingUpdate: (rating) {
+                      print(rating);
+                    },
                   ),
                 ],
               )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sunu_foot/pages/utils_widgets/rating_bar.dart';
 
 class CustomerAvisContainer extends StatelessWidget {
   final String name;
@@ -64,37 +65,25 @@ class CustomerAvisContainer extends StatelessWidget {
                   //  ETOILES
                   Row(
                     children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.orange,
-                        size: 10.sp,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.orange,
-                        size: 10.sp,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.orange,
-                        size: 10.sp,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.orange,
-                        size: 10.sp,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: const Color.fromARGB(255, 209, 209, 208),
-                        size: 10.sp,
+                      CustomRatingBar(
+                        itemSize: 15,
+                        initialRating: 4,
+                        minRating: 0,
+                        direction: Axis.horizontal,
+                        allowHalfRating: true,
+                        itemCount: 5,
+                        itemPadding: EdgeInsets.symmetric(horizontal: 3.0),
+                        size: 10,
+                        onRatingUpdate: (rating) {
+                          print(rating);
+                        },
                       ),
                     ],
                   ),
                 ],
               ),
               SizedBox(
-                width: 130.w,
+                width: 100.w,
               ),
               // DATE
               Expanded(

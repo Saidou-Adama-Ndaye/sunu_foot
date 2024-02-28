@@ -36,7 +36,7 @@ class BottomContainer extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 10.h,
+            height: 5.h,
           ),
           // LE ROW QUI CONTIENT LES DEUX BOUTTONS
           Row(
@@ -51,7 +51,7 @@ class BottomContainer extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(
                       255, 231, 230, 230), // Couleur du bouton gris
-                  fixedSize: Size(158.w, 51.h), // Taille du bouton
+                  fixedSize: Size(158.w, 49.h), // Taille du bouton
                   shape: RoundedRectangleBorder(
                     borderRadius:
                         BorderRadius.circular(15.r), // Bordure arrondie
@@ -73,7 +73,7 @@ class BottomContainer extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(
                       255, 44, 160, 48), // Couleur du bouton vert
-                  fixedSize: Size(158.w, 51.h), // Taille du bouton
+                  fixedSize: Size(158.w, 49.h), // Taille du bouton
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15), // Bordure arrondie
                   ),

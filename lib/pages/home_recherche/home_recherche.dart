@@ -1,11 +1,24 @@
+import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sunu_foot/pages/home_recherche/home_recherche_widgets/terrain_container.dart';
-import 'package:sunu_foot/pages/utils_widgets/date_container.dart';
 import 'package:sunu_foot/pages/utils_widgets/time_slot_container.dart';
 
-class HomeRecherche extends StatelessWidget {
+class HomeRecherche extends StatefulWidget {
   const HomeRecherche({super.key});
+
+  @override
+  State<HomeRecherche> createState() => _HomeRechercheState();
+}
+
+class _HomeRechercheState extends State<HomeRecherche> {
+  late DateTime _selectedValue; // Déclaration de la variable _selectedValue
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedValue = DateTime.now(); // Initialisation avec la date actuelle
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -134,47 +147,29 @@ class HomeRecherche extends StatelessWidget {
                       // LE ROW QUI CONTIENT LE CALENDRIER
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: [
-                              const CustomDateContainer(
-                                text: 'Jeu\n09\nMars',
-                                backgroundColor: Color(0xff1f243b),
-                                textColor: Colors.white,
-                              ),
-                              SizedBox(width: 10.w),
-                              const CustomDateContainer(
-                                text: 'Ven\n10\nMars',
-                                backgroundColor: Color(0xffffffff),
-                                textColor: Colors.black,
-                              ),
-                              SizedBox(width: 10.w),
-                              const CustomDateContainer(
-                                text: 'Sam\n11\nMars',
-                                backgroundColor: Color(0xffffffff),
-                                textColor: Colors.black,
-                              ),
-                              SizedBox(width: 10.w),
-                              const CustomDateContainer(
-                                text: 'Dim\n012\nMars',
-                                backgroundColor: Color(0xffffffff),
-                                textColor: Colors.black,
-                              ),
-                              SizedBox(width: 10.w),
-                              const CustomDateContainer(
-                                text: 'Lun\n13\nMars',
-                                backgroundColor: Color(0xffffffff),
-                                textColor: Colors.black,
-                              ),
-                              SizedBox(width: 10.w),
-                              const CustomDateContainer(
-                                text: 'Mar\n14\nMars',
-                                backgroundColor: Color(0xffffffff),
-                                textColor: Colors.black,
-                              ),
-                            ],
-                          ),
+                        child: DatePicker(
+                          DateTime.now(),
+                          width: 72.w,
+                          height: 72.h,
+                          initialSelectedDate: DateTime.now(),
+                          selectionColor: const Color(0xff1f243b),
+                          selectedTextColor: Colors.white,
+                          deactivatedColor:
+                              const Color.fromARGB(255, 85, 17, 17),
+                          monthTextStyle: TextStyle(
+                              fontSize: 8.sp, fontWeight: FontWeight.bold),
+                          dateTextStyle: TextStyle(
+                              fontSize: 13.sp, fontWeight: FontWeight.bold),
+                          dayTextStyle: TextStyle(
+                              fontSize: 8.sp, fontWeight: FontWeight.bold),
+                          locale: "fr_FR",
+                          onDateChange: (date) {
+                            // New date selected
+                            setState(() {
+                              _selectedValue = date;
+                              print(_selectedValue);
+                            });
+                          },
                         ),
                       ),
                       SizedBox(
