@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sunu_foot/pages/recherche_filtres/recherche_filtres_widgets/small_container_widget.dart';
 import 'package:sunu_foot/pages/terrain/terrain_page_widgets/section_container.dart';
 import 'package:sunu_foot/pages/utils_widgets/header_container.dart';
-import 'package:sunu_foot/pages/utils_widgets/time_slot_container.dart';
+import 'package:sunu_foot/pages/utils_widgets/time_slot.dart';
 
 class TerrainPage extends StatefulWidget {
   const TerrainPage({super.key});
@@ -46,72 +46,53 @@ class _TerrainPageState extends State<TerrainPage> {
                   // LE COLUMN QUI CONTIENT TOUS LES ELEMENTS DU CONTAINER GRIS
                   child: Column(
                     children: [
-                      DatePicker(
-                        DateTime.now(),
-                        width: 72.w,
-                        height: 72.h,
-                        initialSelectedDate: DateTime.now(),
-                        selectionColor: const Color(0xff1f243b),
-                        selectedTextColor: Colors.white,
-                        deactivatedColor: const Color.fromARGB(255, 85, 17, 17),
-                        monthTextStyle: TextStyle(
-                            fontSize: 8.sp, fontWeight: FontWeight.bold),
-                        dateTextStyle: TextStyle(
-                            fontSize: 13.sp, fontWeight: FontWeight.bold),
-                        dayTextStyle: TextStyle(
-                            fontSize: 8.sp, fontWeight: FontWeight.bold),
-                        locale: "fr_FR",
-                        onDateChange: (date) {
-                          // New date selected
-                          setState(() {
-                            _selectedValue = date;
-                            print(_selectedValue);
-                          });
-                        },
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: DatePicker(
+                          DateTime.now(),
+                          width: 72.w,
+                          height: 72.h,
+                          initialSelectedDate: DateTime.now(),
+                          // selectionColor: const Color(0xff1f243b),
+                          selectionColor: Color(0xff1f243b),
+                          selectedTextColor: Colors.white,
+                          deactivatedColor:
+                              const Color.fromARGB(255, 85, 17, 17),
+                          monthTextStyle: TextStyle(
+                            fontSize: 8.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff1f243b),
+                          ),
+                          dateTextStyle: TextStyle(
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff1f243b),
+                          ),
+                          dayTextStyle: TextStyle(
+                            fontSize: 8.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff1f243b),
+                          ),
+                          locale: "fr_FR",
+                          onDateChange: (date) {
+                            // New date selected
+                            setState(
+                              () {
+                                _selectedValue = date;
+                                print(_selectedValue);
+                              },
+                            );
+                          },
+                        ),
                       ),
                       SizedBox(
                         height: 10.h,
                       ),
                       // LE CONTAINER QUI CONTIENT LES TIMES SLOTS
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        color: Colors.white,
-                        width: 375.w,
-                        height: 37.h,
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: [
-                              TimeSlotContainer(
-                                  time: '10:00', backgroundColor: Colors.white),
-                              TimeSlotContainer(
-                                time: '11:00',
-                                backgroundColor: Colors.white,
-                              ),
-                              TimeSlotContainer(
-                                time: '12:00',
-                                backgroundColor: Colors.white,
-                              ),
-                              TimeSlotContainer(
-                                time: '13:00',
-                                backgroundColor: const Color(0xff1f243b),
-                              ),
-                              TimeSlotContainer(
-                                time: '14:00',
-                                backgroundColor: Colors.white,
-                              ),
-                              TimeSlotContainer(
-                                time: '15:00',
-                                backgroundColor: Colors.white,
-                              ),
-                              TimeSlotContainer(
-                                time: '16:00',
-                                backgroundColor: Colors.white,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      TimeSlotContainer(),
                       SizedBox(
                         height: 10.h,
                       ),

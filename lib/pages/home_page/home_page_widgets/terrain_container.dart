@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sunu_foot/pages/home/home_page_widgets/time_container.dart';
+import 'package:sunu_foot/pages/home_page/home_page_widgets/time_container.dart';
 import 'package:sunu_foot/pages/utils_widgets/like_button.dart';
 import 'package:sunu_foot/pages/utils_widgets/rating_bar.dart';
 

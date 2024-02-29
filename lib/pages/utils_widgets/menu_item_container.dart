@@ -20,12 +20,15 @@ class MenuItemContainer extends StatelessWidget {
       decoration: BoxDecoration(
         border: border,
       ),
-      child: Text(
-        text,
-        style: TextStyle(
-          fontSize: 11.sp,
-          fontWeight: FontWeight.bold,
-          color: color,
+      child: InkWell(
+        onTap: () => {},
+        child: Text(
+          text,
+          style: TextStyle(
+            fontSize: 11.sp,
+            fontWeight: FontWeight.bold,
+            color: color,
+          ),
         ),
       ),
     );

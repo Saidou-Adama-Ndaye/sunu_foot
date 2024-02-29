@@ -5,7 +5,7 @@ class BottomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 20.h),
+      padding: EdgeInsets.only(top: 15.h),
       height: 170.h, // Hauteur personnalisée
       decoration: BoxDecoration(
         color: Colors.white,

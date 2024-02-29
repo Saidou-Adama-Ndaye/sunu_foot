@@ -2,7 +2,7 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sunu_foot/pages/home/home_page_widgets/terrain_container.dart';
+import 'package:sunu_foot/pages/home_page/home_page_widgets/terrain_container.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -169,9 +169,7 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                         child: TextButton(
-                          onPressed: () {
-                            // Action à effectuer lorsque le bouton est pressé
-                          },
+                          onPressed: () {},
                           child: const Text(
                             'Rechercher',
                             style: TextStyle(color: Colors.white),
@@ -199,29 +197,47 @@ class _HomeState extends State<Home> {
                     child: Column(
                       children: [
                         // LE DATELINE
-                        DatePicker(
-                          DateTime.now(),
-                          width: 72.w,
-                          height: 72.h,
-                          initialSelectedDate: DateTime.now(),
-                          selectionColor: const Color(0xff1f243b),
-                          selectedTextColor: Colors.white,
-                          deactivatedColor:
-                              const Color.fromARGB(255, 85, 17, 17),
-                          monthTextStyle: TextStyle(
-                              fontSize: 8.sp, fontWeight: FontWeight.bold),
-                          dateTextStyle: TextStyle(
-                              fontSize: 13.sp, fontWeight: FontWeight.bold),
-                          dayTextStyle: TextStyle(
-                              fontSize: 8.sp, fontWeight: FontWeight.bold),
-                          locale: "fr_FR",
-                          onDateChange: (date) {
-                            // New date selected
-                            setState(() {
-                              _selectedValue = date;
-                              print(_selectedValue);
-                            });
-                          },
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          child: DatePicker(
+                            DateTime.now(),
+                            width: 72.w,
+                            height: 72.h,
+                            initialSelectedDate: DateTime.now(),
+                            // selectionColor: const Color(0xff1f243b),
+                            selectionColor: Color(0xff1f243b),
+                            selectedTextColor: Colors.white,
+                            deactivatedColor:
+                                const Color.fromARGB(255, 85, 17, 17),
+                            monthTextStyle: TextStyle(
+                              fontSize: 8.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff1f243b),
+                            ),
+                            dateTextStyle: TextStyle(
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff1f243b),
+                            ),
+                            dayTextStyle: TextStyle(
+                              fontSize: 8.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff1f243b),
+                            ),
+                            locale: "fr_FR",
+                            onDateChange: (date) {
+                              // New date selected
+                              setState(
+                                () {
+                                  _selectedValue = date;
+                                  print(_selectedValue);
+                                },
+                              );
+                            },
+                          ),
                         ),
                         SizedBox(
                           height: 10.h,

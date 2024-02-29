@@ -2,7 +2,7 @@ import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sunu_foot/pages/home_recherche/home_recherche_widgets/terrain_container.dart';
-import 'package:sunu_foot/pages/utils_widgets/time_slot_container.dart';
+import 'package:sunu_foot/pages/utils_widgets/time_slot.dart';
 
 class HomeRecherche extends StatefulWidget {
   const HomeRecherche({super.key});
@@ -147,74 +147,54 @@ class _HomeRechercheState extends State<HomeRecherche> {
                       // LE ROW QUI CONTIENT LE CALENDRIER
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        child: DatePicker(
-                          DateTime.now(),
-                          width: 72.w,
-                          height: 72.h,
-                          initialSelectedDate: DateTime.now(),
-                          selectionColor: const Color(0xff1f243b),
-                          selectedTextColor: Colors.white,
-                          deactivatedColor:
-                              const Color.fromARGB(255, 85, 17, 17),
-                          monthTextStyle: TextStyle(
-                              fontSize: 8.sp, fontWeight: FontWeight.bold),
-                          dateTextStyle: TextStyle(
-                              fontSize: 13.sp, fontWeight: FontWeight.bold),
-                          dayTextStyle: TextStyle(
-                              fontSize: 8.sp, fontWeight: FontWeight.bold),
-                          locale: "fr_FR",
-                          onDateChange: (date) {
-                            // New date selected
-                            setState(() {
-                              _selectedValue = date;
-                              print(_selectedValue);
-                            });
-                          },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          child: DatePicker(
+                            DateTime.now(),
+                            width: 72.w,
+                            height: 72.h,
+                            initialSelectedDate: DateTime.now(),
+                            // selectionColor: const Color(0xff1f243b),
+                            selectionColor: Color(0xff1f243b),
+                            selectedTextColor: Colors.white,
+                            deactivatedColor:
+                                const Color.fromARGB(255, 85, 17, 17),
+                            monthTextStyle: TextStyle(
+                              fontSize: 8.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff1f243b),
+                            ),
+                            dateTextStyle: TextStyle(
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff1f243b),
+                            ),
+                            dayTextStyle: TextStyle(
+                              fontSize: 8.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff1f243b),
+                            ),
+                            locale: "fr_FR",
+                            onDateChange: (date) {
+                              // New date selected
+                              setState(
+                                () {
+                                  _selectedValue = date;
+                                  print(_selectedValue);
+                                },
+                              );
+                            },
+                          ),
                         ),
                       ),
                       SizedBox(
                         height: 10.h,
                       ),
                       //LE CONTAINER DE TIMES SLOTS
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        color: Colors.white,
-                        width: 375.w,
-                        height: 37.h,
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: [
-                              TimeSlotContainer(
-                                  time: '10:00', backgroundColor: Colors.white),
-                              TimeSlotContainer(
-                                time: '11:00',
-                                backgroundColor: Colors.white,
-                              ),
-                              TimeSlotContainer(
-                                time: '12:00',
-                                backgroundColor: Colors.white,
-                              ),
-                              TimeSlotContainer(
-                                time: '13:00',
-                                backgroundColor: Color(0xff1f243b),
-                              ),
-                              TimeSlotContainer(
-                                time: '14:00',
-                                backgroundColor: Colors.white,
-                              ),
-                              TimeSlotContainer(
-                                time: '15:00',
-                                backgroundColor: Colors.white,
-                              ),
-                              TimeSlotContainer(
-                                time: '16:00',
-                                backgroundColor: Colors.white,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      TimeSlotContainer(),
                       SizedBox(
                         height: 10.h,
                       ),
@@ -285,5 +265,15 @@ class _HomeRechercheState extends State<HomeRecherche> {
         ),
       ),
     );
+  }
+
+  List<String> _generateHourIntervals() {
+    List<String> hours = [];
+    DateTime now = DateTime.now();
+    for (int i = 0; i < 24; i++) {
+      String hour = '${(now.hour + i) % 24}:00'; // Format HH:00
+      hours.add(hour);
+    }
+    return hours;
   }
 }

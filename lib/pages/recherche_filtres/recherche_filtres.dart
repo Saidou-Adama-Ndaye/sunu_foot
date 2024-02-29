@@ -259,7 +259,7 @@ class RechercheFiltres extends StatelessWidget {
                             alignment: Alignment.center,
                             elevation: 0,
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
