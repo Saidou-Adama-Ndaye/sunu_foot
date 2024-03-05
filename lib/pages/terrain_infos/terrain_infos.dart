@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:sunu_foot/pages/terrain_infos/terrain_infos_widgets/custom_container.dart';
 import 'package:sunu_foot/pages/utils_widgets/header_container.dart';
+import 'package:sunu_foot/provider/terrain_provider.dart';
+import 'package:sunu_foot/services/terrain_data.dart';
 
 class TerrainInfos extends StatelessWidget {
   const TerrainInfos({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Terrain? terrain = Provider.of<TerrainProvider>(context).terrain;
     return Scaffold(
       body: SafeArea(
         child: Column(

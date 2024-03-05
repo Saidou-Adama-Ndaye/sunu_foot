@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sunu_foot/pages/home_recherche/home_recherche_widgets/terrain_container.dart';
 import 'package:sunu_foot/pages/utils_widgets/time_slot.dart';
+import 'package:sunu_foot/routes.dart';
+import 'package:sunu_foot/services/terrain_data.dart';
 
 class HomeRecherche extends StatefulWidget {
   const HomeRecherche({super.key});
@@ -34,7 +36,7 @@ class _HomeRechercheState extends State<HomeRecherche> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    onPressed: () => {},
+                    onPressed: () => {Navigator.pop(context)},
                     icon: Icon(
                       Icons.arrow_back,
                       size: 30.sp,
@@ -115,16 +117,21 @@ class _HomeRechercheState extends State<HomeRecherche> {
                   Container(
                     height: 44.h,
                     width: 44.w,
-                    padding: const EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
                       color: Colors.green, // Couleur de fond verte
                       borderRadius:
                           BorderRadius.circular(10.0), // Bordures arrondies
                     ),
-                    child: const Center(
-                      child: Icon(
-                        Icons.settings, // Icôre de filtre
-                        color: Colors.white, // Couleur blanche de l'icône
+                    child: Center(
+                      child: IconButton(
+                        icon: const Icon(
+                          Icons.settings, // Icône de filtre
+                          color: Colors.white, // Couleur blanche de l'icône
+                        ),
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, Routes.RECHERCHE_FILTRES);
+                        },
                       ),
                     ),
                   ),
@@ -203,55 +210,31 @@ class _HomeRechercheState extends State<HomeRecherche> {
                         padding: EdgeInsets.symmetric(horizontal: 20.w),
                         child: Column(
                           children: [
-                            // LE PREMIERE CONTAINER DE LA RECCHERCHE
-                            const CustomTerrainContainer(
-                              imageLocation: 'assets/images/rectangle-65.png',
-                              title: 'Terrain Sénégal Japon',
-                              subtitle:
-                                  'Rtes de l\'aéreport (Sud Foire,  Dakar)',
-                              minPrice: '20.000',
-                              maxPrice: '70.000',
-                              isFavorite: true,
-                            ),
-                            SizedBox(height: 10.h),
-                            // LE DEUXIEME CONTAINER DE LA RECHERCHE
-                            const CustomTerrainContainer(
-                              imageLocation:
-                                  'assets/images/rectangle-113-HE3.png',
-                              title: 'Dakar Sacré Coeur',
-                              subtitle: 'Route National vers la VDN',
-                              minPrice: '30.000',
-                              maxPrice: '08.000',
-                            ),
-                            SizedBox(height: 10.h),
-                            // LE TROISIEME CONTAINER DE LA RECHERCHE
-                            const CustomTerrainContainer(
-                              imageLocation: 'assets/images/rectangle-65.png',
-                              title: 'Dakar Sacré Coeur',
-                              subtitle: 'Route National vers la VDN',
-                              minPrice: '30.000',
-                              maxPrice: '08.000',
-                              isFavorite: true,
-                            ),
-                            SizedBox(height: 10.h),
-                            // LE DEUXIEME CONTAINER DE LA RECHERCHE
-                            const CustomTerrainContainer(
-                              imageLocation:
-                                  'assets/images/rectangle-113-HE3.png',
-                              title: 'Dakar Sacré Coeur',
-                              subtitle: 'Route National vers la VDN',
-                              minPrice: '30.000',
-                              maxPrice: '08.000',
-                            ),
-                            SizedBox(height: 10.h),
-                            // LE TROISIEME CONTAINER DE LA RECHERCHE
-                            const CustomTerrainContainer(
-                              imageLocation: 'assets/images/rectangle-65.png',
-                              title: 'Dakar Sacré Coeur',
-                              subtitle: 'Route National vers la VDN',
-                              minPrice: '30.000',
-                              maxPrice: '08.000',
-                              isFavorite: true,
+                            ListView.builder(
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              itemCount: TerrainData.terrains.length,
+                              itemBuilder: (context, index) {
+                                final terrain = TerrainData.terrains[index];
+                                return Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom:
+                                          10.0), // Ajouter un padding de 10 en bas
+                                  child: CustomTerrainContainer(
+                                    ontap: () {
+                                      Navigator.pushNamed(
+                                          context, Routes.TERRAIN_PAGE,
+                                          arguments: terrain);
+                                    },
+                                    imageLocation: terrain.imageLocation,
+                                    title: terrain.title,
+                                    subtitle: terrain.subtitle,
+                                    minPrice: terrain.minPrice,
+                                    maxPrice: terrain.maxPrice,
+                                    rating: terrain.rating,
+                                  ),
+                                );
+                              },
                             ),
                           ],
                         ),

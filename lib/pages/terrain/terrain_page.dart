@@ -1,13 +1,17 @@
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:sunu_foot/pages/recherche_filtres/recherche_filtres_widgets/small_container_widget.dart';
 import 'package:sunu_foot/pages/terrain/terrain_page_widgets/section_container.dart';
 import 'package:sunu_foot/pages/utils_widgets/header_container.dart';
 import 'package:sunu_foot/pages/utils_widgets/time_slot.dart';
+import 'package:sunu_foot/provider/terrain_provider.dart';
+import 'package:sunu_foot/services/terrain_data.dart';
 
 class TerrainPage extends StatefulWidget {
-  const TerrainPage({super.key});
+  final Terrain terrain;
+  TerrainPage({super.key, required this.terrain});
 
   @override
   State<TerrainPage> createState() => _TerrainPageState();
@@ -24,6 +28,8 @@ class _TerrainPageState extends State<TerrainPage> {
 
   @override
   Widget build(BuildContext context) {
+    Terrain terrain = widget.terrain;
+    Provider.of<TerrainProvider>(context, listen: false).setTerrain(terrain);
     return Scaffold(
       body: SafeArea(
         child: Column(

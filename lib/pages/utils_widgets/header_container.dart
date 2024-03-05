@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:sunu_foot/pages/utils_widgets/menu_item_container.dart';
 import 'package:sunu_foot/pages/utils_widgets/rating_bar.dart';
+import 'package:sunu_foot/provider/terrain_provider.dart';
+import 'package:sunu_foot/routes.dart';
+import 'package:sunu_foot/services/terrain_data.dart';
 
 class HeaderContainer extends StatelessWidget {
   final bool? reservation;
@@ -19,6 +23,7 @@ class HeaderContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Terrain? terrain = Provider.of<TerrainProvider>(context).terrain;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -28,7 +33,9 @@ class HeaderContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                onPressed: () => {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 icon: Icon(
                   Icons.arrow_back,
                   size: 30.sp,
@@ -45,7 +52,7 @@ class HeaderContainer extends StatelessWidget {
                 ),
                 child: Center(
                   child: Image.asset(
-                    'assets/images/image-64.png',
+                    terrain!.logo,
                     width: 50.w,
                     height: 50.h,
                   ),
@@ -77,14 +84,14 @@ class HeaderContainer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'Terrain Sénégal Japon',
+                terrain.title,
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
-                'Rtes de l\'aéreport (Sud Foire), Dakar',
+                terrain.subtitle,
                 style: TextStyle(
                   fontSize: 11.sp,
                 ),
@@ -95,7 +102,7 @@ class HeaderContainer extends StatelessWidget {
                 children: [
                   CustomRatingBar(
                     itemSize: 20,
-                    initialRating: 4,
+                    initialRating: terrain.rating,
                     minRating: 0,
                     direction: Axis.horizontal,
                     allowHalfRating: true,
@@ -118,6 +125,10 @@ class HeaderContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               MenuItemContainer(
+                ontap: () => {
+                  Navigator.pushNamed(context, Routes.TERRAIN_PAGE,
+                      arguments: terrain),
+                },
                 text: 'Réservation',
                 color: reservation == true
                     ? const Color(0xff1f243b)
@@ -132,6 +143,9 @@ class HeaderContainer extends StatelessWidget {
                     : null,
               ),
               MenuItemContainer(
+                ontap: () => {
+                  Navigator.pushNamed(context, Routes.TERRAIN_GALLERIE),
+                },
                 text: 'Gallerie',
                 color: gallerie == true
                     ? const Color(0xff1f243b)
@@ -146,6 +160,9 @@ class HeaderContainer extends StatelessWidget {
                     : null,
               ),
               MenuItemContainer(
+                ontap: () => {
+                  Navigator.pushNamed(context, Routes.TERRAIN_INFOS),
+                },
                 text: 'Infos',
                 color: infos == true
                     ? const Color(0xff1f243b)
@@ -160,6 +177,9 @@ class HeaderContainer extends StatelessWidget {
                     : null,
               ),
               MenuItemContainer(
+                ontap: () => {
+                  Navigator.pushNamed(context, Routes.TERRAIN_AVIS),
+                },
                 text: 'Avis',
                 color: avis == true
                     ? const Color(0xff1f243b)

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sunu_foot/routes.dart';
 
 class BottomContainer extends StatelessWidget {
   @override
@@ -68,7 +69,7 @@ class BottomContainer extends StatelessWidget {
               // BOUTON TOUT PAYER
               ElevatedButton(
                 onPressed: () {
-                  // Action du deuxième bouton
+                  Navigator.pushNamed(context, Routes.TERRAIN_COMMANDE_SUCCESS);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(

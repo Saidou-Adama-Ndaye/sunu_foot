@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MenuItemContainer extends StatelessWidget {
+  final VoidCallback? ontap;
   final String text;
   final Color color;
   final Border? border;
 
   const MenuItemContainer({
     Key? key,
+    this.ontap,
     required this.text,
     required this.color,
     this.border,
@@ -21,7 +23,7 @@ class MenuItemContainer extends StatelessWidget {
         border: border,
       ),
       child: InkWell(
-        onTap: () => {},
+        onTap: ontap,
         child: Text(
           text,
           style: TextStyle(

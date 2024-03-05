@@ -20,7 +20,7 @@ class TerrainCommandeSuccess extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    onPressed: () => {},
+                    onPressed: () => {Navigator.pop(context)},
                     icon: Icon(
                       Icons.arrow_back,
                       size: 30.sp,

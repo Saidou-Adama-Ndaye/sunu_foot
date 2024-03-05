@@ -23,10 +23,15 @@ class RechercheFiltres extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  'Fermer',
-                  style: TextStyle(
-                    fontSize: 12.sp,
+                InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    'Fermer',
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                    ),
                   ),
                 ),
                 SizedBox(

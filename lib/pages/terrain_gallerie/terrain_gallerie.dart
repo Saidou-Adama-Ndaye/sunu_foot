@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:sunu_foot/pages/terrain_gallerie/terrain_gallerie_widgets/gallerie_picture.dart';
 import 'package:sunu_foot/pages/terrain_gallerie/terrain_gallerie_widgets/gallerie_container.dart';
 import 'package:sunu_foot/pages/utils_widgets/header_container.dart';
+import 'package:sunu_foot/provider/terrain_provider.dart';
+import 'package:sunu_foot/services/terrain_data.dart';
 
 class TerrainGallerie extends StatelessWidget {
   const TerrainGallerie({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Terrain? terrain = Provider.of<TerrainProvider>(context).terrain;
     return Scaffold(
       body: SafeArea(
         child: Column(
